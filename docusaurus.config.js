@@ -1,11 +1,11 @@
 module.exports = {
   title: 'Saúde SC Docs',
   tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://ses-udesc.github.io', // Your website URL
+  baseUrl: '/docs',
+  projectName: 'docs',
+  organizationName: 'SES-UDESC',
   favicon: 'img/favicon.ico',
-  organizationName: 'SESUdesc', // Usually your GitHub org/user name.
-  projectName: 'SaudeSCDocs', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'Saúde SC Docs',
