@@ -2,8 +2,8 @@ module.exports = {
   title: 'Saúde SC Docs',
   tagline: 'The tagline of my site',
   url: 'https://ses-udesc.github.io', // Your website URL
-  baseUrl: '/documentation/',
-  projectName: 'documentation',
+  baseUrl: '/documentacao/',
+  projectName: 'documentacao',
   organizationName: 'SES-UDESC',
   favicon: 'img/favicon.ico',
   themeConfig: {
