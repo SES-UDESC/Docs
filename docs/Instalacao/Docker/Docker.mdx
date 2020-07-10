@@ -1,0 +1,81 @@
+---
+id: docker
+slug: docker
+title: Docker
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+O projeto tem sua infraestrutura construida baseado no docker. 
+Assim, todos os componentes como o servidor e a interface são disponibilizados através de containers.
+
+<Tabs
+    groupId="os"
+    defaultValue="deb"
+    values={[
+        {label: 'Linux (Deb Based)', value: 'deb'},
+        {label: 'Windows', value: 'win'},
+]}>
+<TabItem value="deb">
+
+Pode-se instalar o docker utilizando o apt e privilégios sudo.
+
+Remover instalações antigas, se existirem
+
+```bash
+sudo apt-get update
+
+sudo apt-get remove docker docker-engine docker.io containerd runc
+```
+
+Instalar pacotes de apoio
+
+```bash
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+```
+
+Adicionar o repositório do docker ao apt
+
+```bash
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable"
+
+sudo apt-get update
+```
+
+Instalar o docker
+
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+
+A partir desde ponto, o docker deve estar instalado na máquina  
+
+Para confirir a instalação, pode-se executar o comando:
+```bash
+docker run hello-world
+```
+Um output positivo deve aparecer no terminal
+
+</TabItem>
+<TabItem value="win">
+
+Para windows, a instalação do docker se dá através do Docker Desktop.
+
+O Docker Desktop deve ser baixado através do link [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+
+O Docker Desktop tem a particularidade de instalar o docker-compose junto ao docker, assim, não será preciso instala-lo a parte.
+
+</TabItem>
+</Tabs>
+

@@ -1,0 +1,45 @@
+---
+id: dockercompose
+slug: docker-compose
+title: Docker Compose
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+O docker-compose é utilizado para orquestrar os containers do projeto. 
+Assim, apenas um comando pode subir grandes estruturas de containers.
+
+<Tabs
+    groupId="os"
+    defaultValue="deb"
+    values={[
+        {label: 'Linux (Deb Based)', value: 'deb'},
+        {label: 'Windows', value: 'win'},
+]}>
+<TabItem value="deb">
+
+Faça o download do docker-compose
+```bash
+sudo curl -L \
+    "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" \
+    -o /usr/local/bin/docker-compose
+```
+# Localização do arquivo
+
+dê permissão de execução ao docker-compose
+```bash
+sudo chmod +x /usr/local/bin/docker-compose
+```
+Um output positivo deve aparecer no terminal
+
+</TabItem>
+<TabItem value="win">
+
+Docker-Compose é instalado por padrão junto com o Docker Desktop 
+
+</TabItem>
+
+</Tabs>
+
+
