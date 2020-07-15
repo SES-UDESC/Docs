@@ -89,24 +89,43 @@ Comandos relacionados ao docker no ambiente de Teste
 Os testes ainda estão em desenvolvimento
 :::
 
-| Comando | Descrição |
-| ------- | --------- |
-| up-cypress    | |
-| build-cypress | |
-| down-cypress  | |
-| test  | |
-| django-test   | |
-| react-test    | |
-| api-test  | |
+| Comando       | Descrição |
+| ------------- | --------- |
+| up-cypress    |           |
+| build-cypress |           |
+| down-cypress  |           |
+| test          |           |
+| django-test   |           |
+| react-test    |           |
+| api-test      |           |
 
-# Backend
+##### Backend
 
-| Comando | Descrição |
-| ------- | --------- |
-| makemigrations    | |
-| migrate   | |
-| django-shell  | |
+| Comando           | Descrição                                         |
+| ----------------- | ------------------------------------------------- |
+| makemigrations    | Cria os scripts de migration do django.           |
+| migrate           | Aplica os scripts de migration do django no db.   |
+| django-shell      | Acessa o shell do django dentro do container.     |   
 
-| Comando | Descrição |
-| ------- | --------- |
-| lighthouse    | |
+
+##### Frontend
+
+| Comando       | Descrição                                                                                                                     |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| lighthouse    | Avalia desempenho das telas do frontend utilizando [Google Lighthouse](https://developers.google.com/web/tools/lighthouse).   |
+
+## Build
+
+A melhor forma de rodar o projeto para desenvolvimento é executar os comandos
+
+```bash
+# Para a primeira vez que o projeto vai ser executado
+make setup
+
+# Para toda vez que houver alteração nas configurações das imagens do containers. 
+# aka: Alterações nos arquivos Dockerfile
+make build
+
+# Para subir os containers e tornar os serviços disponíveis
+make up
+```

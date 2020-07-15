@@ -27,9 +27,9 @@ module.exports = {
           type: "category",
           label: "Estrutura",
           items: [
-            "Projeto/Estrutura/Desenvolvimento/desenvolvimento",
-            "Projeto/Estrutura/Producao/producao",
-            "Projeto/Estrutura/Teste/teste",
+            "Projeto/Estrutura/desenvolvimento",
+            "Projeto/Estrutura/producao",
+            "Projeto/Estrutura/teste",
           ],
         },
       ],
