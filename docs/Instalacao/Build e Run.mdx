@@ -1,0 +1,112 @@
+---
+id: building
+slug: building
+title: Build
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## Makefile
+
+Para faciltar o desenvolvimento e deploy, um arquivo Makefile está localizado na raiz do projeto.
+
+Esse arquivo cria alguns aliases para comandos relacionados ao docker e ao projeto em geral.
+
+### Instalação
+
+<Tabs
+    groupId="os"
+    defaultValue="deb"
+    values={[
+        {label: 'Linux (Deb Based)', value: 'deb'},
+        {label: 'Windows', value: 'win'},
+]}>
+<TabItem value="deb">
+
+
+O make pode ser instalado em sistemas que usam apt
+```bash
+sudo apt-get install make
+```
+
+</TabItem>
+<TabItem value="win">
+
+No windows, um instalador pode ser encontrado em [Make](http://gnuwin32.sourceforge.net/packages/make.htm), o link também mostra instruções de instalação.
+
+Outra alternativa é utilizar softwares como o mingwin ou cygwin para ter acesso ao make.
+
+</TabItem>
+</Tabs>
+
+### Comandos
+
+Todos os comandos pressupõem *make* como prefixo.
+
+Exemplo:
+```bash 
+make build
+```
+##### Setup
+
+Comandos relacionados à configuração do ambiente do projeto
+
+| Comando           | Depende de     | Descrição                                                                                                    |
+| ----------------- | -------------- | ------------------------------------------------------------------------------------------------------------ | 
+| setup             | create-secrets | Comando utilizado para configurar o ambiente, deve ser utilizado toda vez que clonar o repositório.          |
+| create-secrets    |                | Gera os arquivos *secrets* para o docker, onde deve ser configurado usuário e senha do banco e do servidor.  |
+
+##### Desenvolvimento
+
+Comandos relacionados ao docker no ambiente de desenvolvimento
+
+| Comando | Descrição                                                                                                   |
+| ------- | ----------------------------------------------------------------------------------------------------------- |
+| build   | Constroi as imagens, fazendo o download das imagens base, e interpretando os arquivos Dockerfile.           |
+| up      | Sobe as imagens construidas, tornando os serviços operacionais.                                             |
+| down    | Desce e remove oa containers que o cmd *up* subiu, deve ser utilizado após o fim da jornada.                |
+| downv   | O mesmo que o cmd *down*, mas remove os volumes do docker, removendo possíveis informações salvas no banco. |
+| config  | Exibe as configurações do arquivo docker compose, resolvendo variáveis de ambiente, secrets, etc...         |
+
+##### Produção
+
+Comandos relacionados ao docker no ambiente de produção
+
+| Comando       | Descrição |
+| ------------- | --------- |
+| build-prod    | Constroi as imagens de produção, fazendo o download das imagens base, e interpretando os arquivos Dockerfile.                     |
+| up-prod       | Sobe as imagens construidas para produção, tornando os serviços operacionais.                                                     |
+| upd-prod      | Similar ao cmd *up-prod*, mas não deixa o processo preso ao terminal, esse deve ser o cmd para subir os containers na produção.   |
+| down-prod     | Desce e remove os containers que o cmd *up-prod* subiu.                                                                           |
+| downv-prod    | Similar ao cmd *down-prod*, mas remove os volumes do docker, removendo possíveis informações salvas no banco.                     |
+
+##### Teste
+
+Comandos relacionados ao docker no ambiente de Teste
+
+:::info
+Os testes ainda estão em desenvolvimento
+:::
+
+| Comando | Descrição |
+| ------- | --------- |
+| up-cypress    | |
+| build-cypress | |
+| down-cypress  | |
+| test  | |
+| django-test   | |
+| react-test    | |
+| api-test  | |
+
+# Backend
+
+| Comando | Descrição |
+| ------- | --------- |
+| makemigrations    | |
+| migrate   | |
+| django-shell  | |
+
+| Comando | Descrição |
+| ------- | --------- |
+| lighthouse    | |

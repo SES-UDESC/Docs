@@ -10,6 +10,10 @@ import TabItem from '@theme/TabItem';
 O docker-compose é utilizado para orquestrar os containers do projeto. 
 Assim, apenas um comando pode subir grandes estruturas de containers.
 
+:::tip
+Todas as informações aqui contidas podem ser conferidas na documentação original do docker-compose em: [Docker Compose](https://docs.docker.com/compose/)
+:::
+
 <Tabs
     groupId="os"
     defaultValue="deb"
@@ -22,12 +26,13 @@ Assim, apenas um comando pode subir grandes estruturas de containers.
 Faça o download do docker-compose
 ```bash
 sudo curl -L \
-    "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" \
+    "https://github.com/docker/compose/releases/download/1.26.0/docker-compose- \
+    $(uname -s)-$(uname -m)" \
     -o /usr/local/bin/docker-compose
 ```
 # Localização do arquivo
 
-dê permissão de execução ao docker-compose
+Dê permissão de execução ao docker-compose
 ```bash
 sudo chmod +x /usr/local/bin/docker-compose
 ```

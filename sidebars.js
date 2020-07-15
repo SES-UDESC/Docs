@@ -1,5 +1,5 @@
 module.exports = {
-  sidebar: [
+  docs: [
     "intro",
     {
       type: 'category',
@@ -32,13 +32,6 @@ module.exports = {
             "Projeto/Estrutura/Teste/teste",
           ],
         },
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Como Contribuir?',
-      items: [
-        'Contribuicao/contrib',
       ],
     },
     {

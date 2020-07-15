@@ -10,6 +10,10 @@ import TabItem from '@theme/TabItem';
 O projeto tem sua infraestrutura construida baseado no docker. 
 Assim, todos os componentes como o servidor e a interface são disponibilizados através de containers.
 
+:::tip
+Todas as informações aqui contidas podem ser conferidas na documentação original do docker em: [Docker Engine](https://docs.docker.com/engine/install/)
+:::
+
 <Tabs
     groupId="os"
     defaultValue="deb"
@@ -18,6 +22,10 @@ Assim, todos os componentes como o servidor e a interface são disponibilizados 
         {label: 'Windows', value: 'win'},
 ]}>
 <TabItem value="deb">
+
+:::caution 
+Confirmar strings no site oficial para cada distro, este exemplo é para debian
+:::
 
 Pode-se instalar o docker utilizando o apt e privilégios sudo.
 
@@ -41,7 +49,6 @@ sudo apt-get install \
 ```
 
 Adicionar o repositório do docker ao apt
-
 ```bash
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 
